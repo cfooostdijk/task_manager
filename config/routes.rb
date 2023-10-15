@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'main/index'
+  get 'main/about'
+  get 'main/index'
   get 'tasks/index'
   get 'tasks/new'
   get 'tasks/edit'
