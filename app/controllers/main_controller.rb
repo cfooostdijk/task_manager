@@ -5,6 +5,8 @@ class MainController < ApplicationController
 
   def about
     @created_by = "Cristian"
+    @id = params['id']
+    @page = params[:page]
   end
 
   def hello

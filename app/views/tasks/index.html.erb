@@ -2,6 +2,10 @@
 
 <h1>Tasks#index</h1>
 
+<% if @page == 1 %>
+  <h2>Task List</h2>
+<% end %>
+
 <ul>
 <% @tasks.each do |task| %>
   <li><%= task %></li>
