@@ -5,7 +5,16 @@ Rails.application.routes.draw do
   match 'hello', to: "main#hello", via: :get
 
   get 'main/index'
-  get 'tasks/index'
-  get 'tasks/new'
-  get 'tasks/edit'
+
+  resources :categories do
+    member do
+      get :delete
+    end
+  end
+
+  resources :tasks do
+    member do
+      get :delete
+    end
+  end
 end
