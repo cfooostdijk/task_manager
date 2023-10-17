@@ -10,11 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_16_200109) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_16_233846) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_tasks", id: false, force: :cascade do |t|
+    t.integer "tag_id", null: false
+    t.integer "task_id", null: false
+    t.index ["tag_id", "task_id"], name: "index_tags_tasks_on_tag_id_and_task_id"
+    t.index ["task_id", "tag_id"], name: "index_tags_tasks_on_task_id_and_tag_id"
+  end
+
+  create_table "task_assignments", force: :cascade do |t|
+    t.integer "task_id", null: false
+    t.integer "user_id", null: false
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id", "user_id"], name: "index_task_assignments_on_task_id_and_user_id"
+    t.index ["task_id"], name: "index_task_assignments_on_task_id"
+    t.index ["user_id", "task_id"], name: "index_task_assignments_on_user_id_and_task_id"
+    t.index ["user_id"], name: "index_task_assignments_on_user_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -35,4 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_200109) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "task_assignments", "tasks"
+  add_foreign_key "task_assignments", "users"
 end
