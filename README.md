@@ -1,11 +1,9 @@
-# README
-
 # Task Manager
 
-## Description
+### Description
 Task Manager is a straightforward application that helps individuals and teams effectively organize, track, and prioritize tasks and projects.
 
-## Steps to run the application
+### Steps to run the application
 
 1. Clone the repository using HTTP or SSH.
 2. Run the `bundle install` command to install necessary gems.   
