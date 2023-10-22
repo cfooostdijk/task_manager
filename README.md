@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Task Manager
 
-Things you may want to cover:
+## Description
+Task Manager is a straightforward application that helps individuals and teams effectively organize, track, and prioritize tasks and projects.
 
-* Ruby version
+## Steps to run the application
 
-* System dependencies
+1. Clone the repository using HTTP or SSH.
+2. Run the `bundle install` command to install necessary gems.   
+3. Create the database and perform migrations as follows `rails db:create sb:migrate`. 
+4. Finally, start the local server using the following command `rails s`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Once you have completed these steps, you can access your application at `http://localhost:3000`.
