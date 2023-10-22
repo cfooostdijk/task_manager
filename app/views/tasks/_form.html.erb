@@ -1,20 +1,20 @@
 <%= render(partial: 'layouts/error_messages', locals: {object: f.object}) %>
 
-<table summary="Task form fields">
+<table class="table table-bordered table-striped mt-4" summary="Task form fields">
   <tr>
     <th>Name</th>
-    <td><%= f.text_field(:name) %></td>
+    <td><%= f.text_field(:name, class: 'form-control') %></td>
   </tr>
   <tr>
     <th>Position</th>
-    <td><%= f.text_field(:position) %></td>
+    <td><%= f.text_field(:position, class: 'form-control') %></td>
   </tr>
   <tr>
     <th>Completed</th>
-    <td><%= f.check_box(:completed) %></td>
+    <td><%= f.check_box(:completed, class: 'form-check-input') %></td>
   </tr>
   <tr>
     <th>Description</th>
-    <td><%= f.text_area(:description) %></td>
+    <td><%= f.text_area(:description, class: 'form-control') %></td>
   </tr>
 </table>
